@@ -3,7 +3,6 @@ import axios from 'axios';
 
 axios.defaults.baseURL = 'https://api.unsplash.com/';
 const ACCESS_KEY = 'Od0Mp7I-0FIZEquY0822WcoH9xlgTPnbQb4CCZf4HrA';
-// const SECRET_KEY = '3N1IitQTOWG-DdzkxeJA7ZZeSu6INQaM2_PzNjPtlf0';
 
 const initialState = {
   images: [],
@@ -35,8 +34,14 @@ export const gallerySlice = createSlice({
   extraReducers: {
     [getImages.fulfilled]: (state, { payload }) => {
       state.images.push(payload);
-      // [getImages.pending]: () =>
-      // [getImages.rejected]: () =>
+      state.loading = false;
+    },
+    [getImages.pending]: (state, _) => {
+      state.loading = true;
+    },
+    [getImages.rejected]: (state, _) => {
+      state.loading = false;
+      alert('Ooops, something went wrong=(');
     },
   },
 });

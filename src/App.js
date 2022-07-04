@@ -17,6 +17,7 @@ const App = () => {
             title: 'Gallery',
             headerTitleAlign: 'center',
             headerTitleStyle: { color: '#5f9ea0' },
+            headerStyle: { backgroundColor: '#f0f8ff' },
           }}
         />
         <Stack.Screen
@@ -26,6 +27,7 @@ const App = () => {
             title: 'Image',
             headerTitleAlign: 'center',
             headerTitleStyle: { color: '#5f9ea0' },
+            headerStyle: { backgroundColor: '#f0f8ff' },
           }}
         />
       </Stack.Navigator>
